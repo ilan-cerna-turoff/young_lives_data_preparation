@@ -1,0 +1,55 @@
+---
+title: "Data decisions"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+    code_folding: hide
+---
+```{r, echo=FALSE}
+highlight <- function(x, colour) {
+  sprintf("<span style='background-color: %s'>%s</span>", colour, x)
+}
+```
+### Overview
+
+This document outlines further specific data decisions made in manually cleaning variables from each country. The included variables are time varying and were collected at each round or baseline variables that were non-time varying. This list is extensive but not exhaustive. We encourage researchers to dig into the functions and scripts further to understand data decisions, mutate covariates in other ways to suit their analysis goals and include further covariates, if desired. 
+
+
+**<u>Variable naming conventions</u>**
+-   Variable naming is kept consistent across rounds for merging. When variables have different suffixes to indicate rounds, they are stripped
+
+**<u>Process for variable coding</u>**
+
+-   *Continuous variables*: coded as numerics
+
+-   *Binary/categorical variables*: 0,1 (“no”, “yes”) or 1,2 (“yes”, “no”) is not consistent within or between surveys or countries. Factors labels with levels are applied for consistency
+  
+    -   A few variables did not include a “no” response. NAs are coded as "no" when they could be extrapolated from other variables
+
+-   *NA*: set to "missing" 
+
+    -   Note that values are not consistent within or between surveys or countries (e.g., -77,-88,…,99,88). Automated functions use a list of potential values that were found across the data and can be tailored by individual users for any specific NA values)
+
+-   *Linkage variables*: changes across countries and survey types. They are set to character type and made consistent for linkage and analysis
+
+-   *Variable response comparability*: sometimes variables are structured slightly differently between rounds. Variables should be mutated to have 1 consistent form. The lowest common denominator across surveys should be used to ensure comparability (e.g., a variable is binary at one round and continuous at another, so it needs to be mutated to be a binary throughout to be able to merge and compare the variable across rounds) 
+
+-   *Overlapping responses:* some survey questions contain responses that are asked twice. These variables are not included in this data cleaning
+
+-   *Non-variability:* for some variables, 100% of people said "yes" or "no", which may not be useful for determining changes over time
+
+
+**<u>Community survey</u>**
+-   Baseline variables were extracted or created from round 1 of the survey. These variables should remain relatively constant by community (e.g., subzone = ecological subzone) or are composites of created from community characteristics at baseline that were not collected at subsequent rounds (e.g., langcomp = number of languages spoken in community)
+
+-   If any respondent replied "yes" within a community at a round, it was labelled "yes" for that community. The highest number provided by respondents for continuous variables within a community at each round was used
+
+-   The list of cleaned variables for each country is relatively comparable. When variables differed, it was because that variable was either not present in all rounds of data collection for a country or was asked in a manner that made it impossible to link longitudinally (e.g., use of Ethiopian and Gregorian calendars for asking the same question at different rounds of the Ethiopia survey on the number of months per year a community was accessible)
+
+
+**<u>COVID surveys</u>**
+-   We coded scripts separately for younger and older children cohorts in the covid surveys to account for slight differences in variable names and response options. These cohorts can later be combined if desired for analysis purposes
+
+-   Few variables were collected across all three rounds of data collection. A much longer list could be included if users were looking for non-overlapping variables for analysis. Researchers are recommended to use fuzzy_match to identify common variables and manual searching.

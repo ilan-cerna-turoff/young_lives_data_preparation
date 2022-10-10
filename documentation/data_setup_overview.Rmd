@@ -1,0 +1,35 @@
+---
+title: "Data setup overview"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    toc_depth: 3
+    code_folding: hide
+---
+```{r, echo=FALSE}
+highlight <- function(x, colour) {
+  sprintf("<span style='background-color: %s'>%s</span>", colour, x)
+}
+```
+### Overview
+This document provides an overview of the steps needed for using these R files and setting up data cleaning pipeline. 
+
+## Data cleaning setup steps
+1. Data must be requested. Interested users should request data from: [UK Data Service](https://beta.ukdataservice.ac.uk/datacatalogue/series/series?id=2000060). Additional documentation on The Young Lives study can be found on: [Young Lives](https://www.younglives.org.uk/).
+2. Folder structures should follow the instructions as laid out in the `README.md` file.
+3. An `.rproj` file is helpful to create in order to keep data analysis organised, using relative paths to avoid hardcoding on users' local systems and link to GitHub.
+4. A `.gitignore` file is necessary to ensure that users **do not** pull actual data onto GitHub. This code ensures that data are not uploaded:
+    # everything in the data folder
+    `data/*`
+5. `.dta` raw data files need to be renamed with prefixes that follow our naming convention (`r[round number]_[country abbreviation]_[file descriptor].[extension]`, example: `r1_et_main.dta`) to be used with the automated functions.
+6. Raw data should be placed in appropriate folders.
+7. The initial part of the cleaning scripts (based upon `0_requirements` function) should be run to ensure that all needed packages are installed prior to data cleaning.
+8. Run the rest of the R scripts to clean data. 
+9. Run the merging scripts (based upon `merge_intermediate` function) to merge common variables across survey rounds for each survey type and country.
+
+## Additional Notes
+-   Variable names are stripped of their suffixes, indicating rounds, when present to have a common root when merging.
+-   Variable types should also be harmonised across rounds (e.g., all [variablename] saved as.factor).
+-   Some data users may choose to add additional variables to their analyses. This can be easily done in the `vars_i_want` portion of the cleaning codes. 
+-   clean() can be applied to most survey rounds. clean_step1_label_error(), clean_step2_complete(), low_memory_clean(), and low_memory_clean_v2() are useful for community surveys in rounds 4 and 5. The Young Lives Survey datafiles were shared in a manner that is not ideal for cleaning and "tidying" the data for analysis. Loading in even a small number of variables to clean, supersedes R's working memory and would require high performance cluster computing systems to remedy. As a workaround, we created alternative merging functions that merge in a wide format for cleaning. This may allow for a final pivot to a long format after a smaller number of variables are selected and cleaned. Refer directly to [cleaning](code/cleaning) for examples. 

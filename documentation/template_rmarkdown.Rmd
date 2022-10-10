@@ -1,0 +1,22 @@
+---
+title: "Template R Markdown"
+output: html_document
+---
+This template can be used for note taking when cleaning data so that researchers have a record associated with each specific file.
+
+# Variables 
+
+## 1. linkage variables
+[nameofvariable] (linkage)
+
+## 2. dataframe: r1_et_[datafilename] *(THIS IS THE NAME OF EACH DTA FILE)*
+
+> Notes: 
+> factor labels are applied to all categorical variables
+> variable ([name of variable]) have *X* variability and needed to recoded as *Y*
+
+### variable list
+list all variables that you are analysing from that country, round, and survey type
+
+# Final notes
+> add here if needed 
