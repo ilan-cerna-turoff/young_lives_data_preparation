@@ -1,1 +1,1 @@
-I'm a temporary file so Git can recognize this empty directory. Please delete me once you've added some code here.
+I'm a temporary file so Git can recognize this empty directory. Please delete me once you've added data here.
