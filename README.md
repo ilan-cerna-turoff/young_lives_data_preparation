@@ -1,7 +1,7 @@
 # young\_lives\_data\_preparation
 
 ## Overview 
-This is a repository to clean and merge data from The Young Lives Study for three survey types (the main community survey and COVID-19 telephone surveys for older and younger children). This cohort study followed children for over 20 years in four low- and middle-income countries and conducted surveys with children, caregivers, and community members. Data from the community survey and COVID-19 surveys are publicly stored as hundreds of datafiles that cannot be merged or readily used for longitudinal analysis. This repository includes code to clean variables that are common across rounds and merge data for analysis. After cleaning, these surveys can also be linked and analysed with other types of Young Lives Surveys for older and younger children.
+This is a repository to clean and merge data from The Young Lives Study for three survey types (the main community survey and COVID-19 telephone surveys for older and younger children). This cohort study followed children for over 20 years in four low- and middle-income countries and conducted surveys with children, caregivers and community members. Data from the community survey and COVID-19 surveys are publicly stored as hundreds of datafiles that cannot be merged or readily used for longitudinal analysis. This repository includes code to clean variables that are common across rounds and merge data for analysis. After cleaning, these surveys can also be linked and analysed with other types of surveys that comprise the Young Lives Study.
 
 The full list of available functions is outlined below:
 
