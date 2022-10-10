@@ -119,4 +119,4 @@ These automated functions are tailored to the Young Lives Surveys but can also b
 **Please include the below citation if this code is used in analysing Young Lives data or if the functions are adapted to future analyses in other datasets. More information on data preparation standards can also be found in the linked citation. Questions and comments can be addressed to Ilan Cerna-Turoff at it2208@caa.columbia.edu.** 
 
 # Citation:
-**Insert final journal citation here[article](web_address/)**
+**Insert final journal citation here[article] (web_address/)**
