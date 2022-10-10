@@ -40,3 +40,6 @@ vignettes/*.pdf
 
 # pesky macOS files
 *.DS_Store
+
+# everything in the data folder
+data/*
