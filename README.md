@@ -45,7 +45,7 @@ README table of contents:
 
 ### At a glance
 
-![Directory Structure](documentation/.directory_structure.png)
+![documentation](documentation/.directory_structure.png)
 
 
 ## 2. File naming conventions guide
