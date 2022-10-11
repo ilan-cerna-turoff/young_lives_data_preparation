@@ -41,5 +41,6 @@ pacman::p_load(
 #--------------------------#
 #### 2. LOAD FUNCTIONS  ####
 #--------------------------#
-# 2a. Load all functions in the functions folder:
-walk(list.files(here("code", "functions"), full.names = T), source)
+# 2a. Load all functions in the functions folder (except this one, to avoid infinite recursion):
+fns <- list.files(here("code", "functions"), full.names = T)
+walk(fns[!endsWith(fns, "0_requirements.R")], source)
