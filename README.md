@@ -119,4 +119,10 @@ These automated functions are tailored to the Young Lives Surveys but can also b
 **Please include the below citation if this code is used in analysing Young Lives data or if the functions are adapted to future analyses in other datasets. More information on data preparation standards can also be found in the linked citation. Questions and comments can be addressed to Ilan Cerna-Turoff at it2208@caa.columbia.edu.** 
 
 # Citation:
-**Insert final journal citation here[article] (web_address/)**
+@article{,
+  title = {Standards in responsibly sharing cohort data for transparency and reproducibility: response to The Young Lives Study},
+  author = {Ilan Cerna-Turoff and Lawrence G. Chillrud and Kara E. Rudolph and Joan A. Casey},
+  journal = {International Journal of Epidemiology},
+  year = {2023},
+  url = {in press}
+}
